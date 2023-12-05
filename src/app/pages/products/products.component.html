@@ -1,0 +1,43 @@
+<div class="bg-black min-h-[100vh] overflow-hidden mx-auto px-4 py-20" 
+style="background-image: url('https://images.pexels.com/photos/2126268/pexels-photo-2126268.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: right center;">
+<div class="flex justify-end">
+    <select class="block w-sm text-sm px-2 font-semibold transition text-white duration-75 rounded-lg shadow-sm h-9 ring-2 ring-black focus:ring-1 focus:ring-inset bg-green-950 bg-opacity-40"
+     (change)="onSelectChange($event.target)">
+     <option [value]="'all'" >All</option>
+        @for (item of mealCategoryList; track $index) {
+            <option [value]="item.value" >{{item.name}} </option>
+        }
+      </select>
+      
+
+</div>
+    <div class="mt-8">
+        @for (item of menuList; track $index ) {
+            @if (item.dishName) {
+                <div class="flex flex-row xs:flex-row items-center justify-start bg-green-900 bg-opacity-10 rounded-md  shadow-sm p-2 mb-1 bg-clip-padding backdrop-filter backdrop-blur-sm">
+                    @if ((item.imageUrl) && !(item.imageUrl === "") ) {
+                        <div class="flex-shrink-0 pr-2">
+                            <img [src]="item.imageUrl"
+                             alt="Product image" class="w-24 h-24 rounded-sm object-cover">
+                        </div>
+                    }
+                    <div class="mt-4 md:mt-0 w-full px-2">
+                        <h2 class="text-lg text-green-900 font-bold">{{item.dishName}}</h2>
+                        <a href=""
+                                class="relative rounded-full font-medium px-2 py-1 text-xs bg-green-900 text-white hover:bg-green-200 hover:text-black dark:bg-black dark:text-gray-300 ">{{
+                                    item.category }}</a>
+                        <p class="mt-2 text-gray-400 text-sm">{{item.description}}</p>
+                        <div class="mt-4 flex items-center">
+    
+                            <span class="ml-auto text-green-800 font-bold self-end">$ {{item.price}}</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
+</div>
+<!-- https://images.pexels.com/photos/3458448/pexels-photo-3458448.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 -->
+<!-- https://images.pexels.com/photos/4264046/pexels-photo-4264046.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 -->
+<!-- https://images.pexels.com/photos/1813466/pexels-photo-1813466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 -->

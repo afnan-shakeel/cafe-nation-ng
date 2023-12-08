@@ -82,4 +82,15 @@ export class MenuConfigComponent {
     this.menuList = await this.firestoreService.getMenuData(null, null);
     delete this.deleteCache;
   }
+
+  async onSelectChange(event: any) {
+    const selectedValue = event.value;
+    // Use the selectedValue here
+    if(selectedValue=='all'){
+      this.menuList = await this.firestoreService.getMenuData(null, 'active');
+      return;
+    }
+    console.log(selectedValue);
+    this.menuList = await this.firestoreService.getMenuData(selectedValue, 'active');
+  }
 }

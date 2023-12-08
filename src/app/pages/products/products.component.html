@@ -1,5 +1,6 @@
-<div class="bg-black min-h-[100vh] overflow-hidden mx-auto px-4 py-20" 
-style="background-image: url('https://images.pexels.com/photos/2126268/pexels-photo-2126268.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: right center;">
+<div class="bg-white min-h-[100vh] overflow-hidden mx-auto px-4 py-20" 
+style="background-image: url('https://images.pexels.com/photos/7598536/pexels-photo-7598536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: right center;"
+>
 <div class="flex justify-end">
     <select class="block w-sm text-sm px-2 font-semibold transition text-white duration-75 rounded-lg shadow-sm h-9 ring-2 ring-black focus:ring-1 focus:ring-inset bg-green-950 bg-opacity-40"
      (change)="onSelectChange($event.target)">
@@ -18,7 +19,7 @@ style="background-image: url('https://images.pexels.com/photos/2126268/pexels-ph
                     @if ((item.imageUrl) && !(item.imageUrl === "") ) {
                         <div class="flex-shrink-0 pr-2">
                             <img [src]="item.imageUrl"
-                             alt="Product image" class="w-24 h-24 rounded-sm object-cover">
+                             alt="Product image" class="w-24 h-24 rounded-lg object-cover">
                         </div>
                     }
                     <div class="mt-4 md:mt-0 w-full px-2">
@@ -26,7 +27,7 @@ style="background-image: url('https://images.pexels.com/photos/2126268/pexels-ph
                         <a href=""
                                 class="relative rounded-full font-medium px-2 py-1 text-xs bg-green-900 text-white hover:bg-green-200 hover:text-black dark:bg-black dark:text-gray-300 ">{{
                                     item.category }}</a>
-                        <p class="mt-2 text-gray-400 text-sm">{{item.description}}</p>
+                        <p class="mt-2 text-gray-600 text-sm">{{item.description}}</p>
                         <div class="mt-4 flex items-center">
     
                             <span class="ml-auto text-green-800 font-bold self-end">$ {{item.price}}</span>

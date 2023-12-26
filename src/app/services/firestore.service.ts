@@ -1,3 +1,4 @@
+import 'tslib';
 import { Injectable } from '@angular/core';
 import { initializeApp } from "firebase/app";
 import {
@@ -13,13 +14,14 @@ const firebaseConfig = {
   projectId: "cafe-nation",
   storageBucket: "cafe-nation.appspot.com",
   messagingSenderId: "1004313904082",
-  appId: "1:1004313904082:web:2f5c0d7e3e2d9c5c3c9c6a",
-  measurementId: "G-9RQZC5QZ2D"
+  // appId: "1:1004313904082:web:2f5c0d7e3e2d9c5c3c9c6a",
+  // measurementId: "G-9RQZC5QZ2D"
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const menu_items = collection(db, "menu_items");
+
 @Injectable({
   providedIn: 'root'
 })
